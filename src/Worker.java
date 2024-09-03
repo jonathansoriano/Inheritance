@@ -11,8 +11,8 @@ public class Worker extends Person {
         return hourlyPayRate;
     }
 
-    public void setHourlyPayRate(double payRate){
-        this.hourlyPayRate = hourlyPayRate;
+    public void setHourlyPayRate(double hourlyPayRate){ // You need to make hourlyPayRate equal to the new "payRate";
+        this.hourlyPayRate = hourlyPayRate; // Otherwise you will still get the original hourlyRate from the constructor.
     }
 
     public double calculateWeeklyPay(double hoursWorked){
@@ -34,23 +34,28 @@ public class Worker extends Person {
 
     }
 
-    /*public String displayWeeklyPay(double hoursWorked){ // Need to display regular pay and overtime pay in return statement.
+    public String displayWeeklyPay(double hoursWorked){ // Need to display regular pay and overtime pay in return statement.
         double weeklyPay = 0.0;
         String msg = "";
         if (hoursWorked <= 40.0){
             weeklyPay = hourlyPayRate * hoursWorked;
-            msg = "Regular Hours Worked: " + hoursWorked + "." + "\nOvertime Hours Worked: " + 0.0 + ".";
+            msg = "Regular Hours Worked: " + hoursWorked + "." + "Regular hours pay: " + weeklyPay + "." + "\n\nOvertime Hours Worked: " + 0.0 + "." + "Overtime hours pay: " + 0.0;
         } else {
 
             double overtimeHours = hoursWorked - 40;
             double regularHours = hoursWorked - overtimeHours;
-            weeklyPay = (1.5 * hourlyPayRate) * overtimeHours;
-            msg = "Regular Hours Worked: " + regularHours + "." + "\nOvertime Hours Worked: " + overtimeHours + ".";
+            double overtimePay = (1.5 * hourlyPayRate) * overtimeHours;
+            double regularPay = regularHours * hourlyPayRate;
+            weeklyPay = regularPay + overtimePay;
+
+            msg = "Regular Hours Worked: " + regularHours + "." + " Regular hours pay: " + regularPay + "." + " Overtime Hours Worked: " + overtimeHours + "." + " Overtime hours pay: " + overtimePay + " Total Pay: " + weeklyPay;
+
         }
 
 
 
-        return
-    } */
+        return msg;
+    }
+
 
 }
