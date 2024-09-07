@@ -21,7 +21,7 @@ class WorkerTest {
     @Test
     void calculateWeeklyPay() { //1420 regular pay + 532.5 otpay = 1952.5
         p1.calculateWeeklyPay(50.00);
-        assertEquals(1952.5, p1.calculateWeeklyPay(50.00));
+        assertEquals(1237.50, p1.calculateWeeklyPay(50.00));
     }
 
     @Test

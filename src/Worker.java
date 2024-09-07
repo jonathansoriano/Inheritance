@@ -42,6 +42,7 @@ public class Worker extends Person {
             regularPay = 40 * hourlyPayRate;
             weeklyPay =  overtimePay + regularPay;
         }
+        weeklyPay = Math.round(weeklyPay * 100.0) / 100.0;
 
         return weeklyPay;
 
