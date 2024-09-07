@@ -7,14 +7,27 @@ public class Worker extends Person {
         this.hourlyPayRate = hourlyPayRate;
     }
 
+    /**
+     * This method retrieves the hourlyPayRate of the Worker object
+     * @return - returns the hourlyPayRate of Worker Object.
+     */
     public double getHourlyPayRate(){
         return hourlyPayRate;
     }
 
+    /**
+     * This methods allows you to change the hourlyPayRate of the Worker Object.
+     * @param hourlyPayRate - you need a hourlyPayRate type double to change the value of hourlyPayRate.
+     */
     public void setHourlyPayRate(double hourlyPayRate){ // You need to make hourlyPayRate equal to the new "payRate";
         this.hourlyPayRate = hourlyPayRate; // Otherwise you will still get the original hourlyRate from the constructor.
     }
 
+    /**
+     * This method calculates the Worker's weekly pay based on weekly hours.
+     * @param hoursWorked - you need to enter hours worked (type double) to do the calculations
+     * @return - returns weekly pay for Worker object.
+     */
     public double calculateWeeklyPay(double hoursWorked){
         double weeklyPay = 0.0;
 
@@ -34,6 +47,11 @@ public class Worker extends Person {
 
     }
 
+    /**
+     * This method displays how many hours worked and weekly pay for the Worker object.
+     * @param hoursWorked - you need to enter hours worked (type double) to do the calculations
+     * @return - returns hours worked and weekly pay for the Worker object.
+     */
     public String displayWeeklyPay(double hoursWorked){ // Need to display regular pay and overtime pay in return statement.
         double weeklyPay = 0.0;
         String msg = "";
@@ -51,9 +69,6 @@ public class Worker extends Person {
             msg = "Regular Hours Worked: " + regularHours + "." + " Regular hours pay: " + regularPay + "." + " Overtime Hours Worked: " + overtimeHours + "." + " Overtime hours pay: " + overtimePay + " Total Pay: " + weeklyPay;
 
         }
-
-
-
         return msg;
     }
 
